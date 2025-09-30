@@ -19,6 +19,10 @@
         <a href="#projects">Projects</a>
         <a href="static/resume.pdf" target="_blank">Resume</a>
       </nav>
+      <!-- Mobile menu button -->
+      <div class="mobile-menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </div>
   </header>
 
@@ -35,61 +39,71 @@
       </p>
       <p>This site is my little corner to share whatever I’m currently learning, building, or just messing around with, so expect it to change a lot as I figure out what I really want to do! Right now, I’m all about web development and tech, but I also like exploring projects that can actually help people or make life a bit easier.</p>
 
-<p>I’m a bit of a goal-oriented person, so here’s what I’m planning for the next few months (and yes, this is partly accountability for when I update this page later):</p>
+      <p>I’m a bit of a goal-oriented person, so here’s what I’m planning for the next few months (and yes, this is partly accountability for when I update this page later):</p>
 
-<p>- Gain experience! I want to keep working on projects—especially ones that push me to learn new skills like backend development or data tools.</p>
-<p>- Improve this website! I built it as a portfolio, but there’s always room for upgrades, better design, and cooler features.</p>
-<p>- Learn French better! I’ve been practicing for a while, but I want to actually get to the point where I can speak confidently.</p>
-<p>- Work on a passion project! Whether it’s a web app or something else tech-related, I want to create something I can really be proud of.</p>
+      <p>- Gain experience! I want to keep working on projects—especially ones that push me to learn new skills like backend development or data tools.</p>
+      <p>- Improve this website! I built it as a portfolio, but there’s always room for upgrades, better design, and cooler features.</p>
+      <p>- Learn French better! I’ve been practicing for a while, but I want to actually get to the point where I can speak confidently.</p>
+      <p>- Work on a passion project! Whether it’s a web app or something else tech-related, I want to create something I can really be proud of.</p>
 
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects">
-  <h2>Projects</h2>
+    <h2>Projects</h2>
 
-  <div class="projects-grid">
+    <div class="projects-grid">
 
-    <div class="project-card">
-      <a href="https://kendaaa.github.io/portfolio/" target="_blank">
-        <img src="static/images/pg.png" alt="Project 1 Screenshot" class="project-image">
-      </a>
-      <div class="project-info">
-        <h3>Password Generator Website</h3>
-        <p>A web app built with Flask and SQLAlchemy that securely generates and stores passwords.</p>
+      <div class="project-card">
+        <a href="https://kendaaa.github.io/portfolio/" target="_blank">
+          <img src="static/images/pg.png" alt="Project 1 Screenshot" class="project-image">
+        </a>
+        <div class="project-info">
+          <h3>Password Generator Website</h3>
+          <p>A web app built with Flask and SQLAlchemy that securely generates and stores passwords.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="project-card">
-      <a href="https://github.com/kendaaa/project2" target="_blank">
-        <img src="static/images/portfolio.png" alt="Project 2 Screenshot" class="project-image">
-      </a>
-      <div class="project-info">
-        <h3>My Portfolio</h3>
-        <p>I've created a portfolio to present my projects and hobbies.</p>
+      <div class="project-card">
+        <a href="https://github.com/kendaaa/project2" target="_blank">
+          <img src="static/images/portfolio.png" alt="Project 2 Screenshot" class="project-image">
+        </a>
+        <div class="project-info">
+          <h3>My Portfolio</h3>
+          <p>I've created a portfolio to present my projects and hobbies.</p>
+        </div>
       </div>
+
     </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-left">
-      <p>Let's Connect!</p>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>Let's Connect!</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/kendaaa" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:kenda28@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
     </div>
-    <div class="footer-right">
-      <a href="https://github.com/kendaaa" target="_blank">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="mailto:kenda28@gmail.com">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
+
+  <!-- Mobile menu script -->
+  <script>
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('header nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>

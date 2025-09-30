@@ -4,13 +4,12 @@
   box-sizing: border-box;
 }
 
-h1,p {
-  color: #3b3b3b; /* Replace with any hex code you like */
-  margin-bottom: 24px; /* more space between paragraphs */
-  line-height: 1.6;    /* keeps text easy to read */
+h1, p {
+  color: #3b3b3b; 
+  margin-bottom: 24px;
+  line-height: 1.6;
 }
 
-/* Body style */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -25,16 +24,117 @@ h2{
 
 /* Header */
 header {
-  background-color: #dbd9d9; /* Darker blue */
+  background-color: #dbd9d9;
   color: white;
   padding: 20px 40px;
-  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  border-radius: 8px 8px 0 0;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+  display: none; /* hidden on desktop */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Intro Section */
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.intro-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  max-width: 1500px;
+}
+
+img.profile-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  object-position: center 15%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  text-align: center;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 0 auto;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.project-info h3 {
+  margin: 10px 0 5px 0;
+}
+
+.project-info p {
+  margin: 0 0 10px 0;
+}
+
+.project-card a img {
+  cursor: pointer;
+}
+
+/* Footer */
 footer {
-  background-color: #dbd9d9;   /* dark background makes icons visible */
+  background-color: #dbd9d9;
   color: white;
-  padding: 40px 20px;       /* thicker footer */
+  padding: 40px 20px;
   border-radius: 0 0 8px 8px;
 }
 
@@ -58,119 +158,86 @@ footer {
 
 .footer-right i {
   font-size: 70px;
-  color: #333;             /* visible on dark background */
+  color: #333;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .footer-right i:hover {
   transform: scale(1.2);
-  color: white;           /* optional hover color */
+  color: white;
 }
 
-/* Responsive: stack on smaller screens */
+/* -------------------- Responsive Styles -------------------- */
+@media (max-width: 1024px) {
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-image img, img.profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    gap: 20px;
+  }
+
+  .footer-right a {
+    margin-left: 30px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 @media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .intro-container {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
   .footer-container {
     flex-direction: column;
     gap: 15px;
   }
-}
 
-/* Main content */
-main {
-  background-color: #f9f9f9; /* light gray */
-  padding: 30px 40px;
-  border-radius: 0 0 8px 8px; /* Rounded bottom corners if you want */
-}
+  .footer-left p {
+    font-size: 2rem;
+  }
 
-.header-container {
-  display: flex;              /* Use flexbox for layout */
-  align-items: center;        /* Vertically center items */
-  justify-content: space-between; /* Push h1 left, nav right */
-}
+  .footer-right i {
+    font-size: 50px;
+  }
 
-nav a {
-  margin-left: 20px;          /* Space between links */
-  color: #333;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.intro-container {
-  display: flex;
-  align-items: center;
-  gap: 2rem; /* space between image and text */
-  padding: 2rem;
-}
-
-.intro-image img {
-  width: 150px; /* adjust as needed */
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%; /* circle effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.intro-text {
-  max-width: 1500px;
-
-}
-
-img.profile-photo {
-  width: 200px;          /* or any size you prefer */
-  height: 200px;
-  object-fit: cover;
-  border-radius: 15px;
-  object-position: center 15%;   /* adjust for how soft you want the corners */
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px; /* space between project cards */
-}
-
-.project-card {
-  text-align: center;
-}
-
-.project-image {
-  width: 100%;             /* fills card width */
-  max-width: 400px;        /* limits image width */
-  height: auto;            /* keeps aspect ratio */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-  margin: 0 auto;          /* centers image in card */
-}
-
-.project-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-.project-info h3 {
-  margin: 10px 0 5px 0;
-}
-
-.project-info p {
-  margin: 0 0 10px 0;
-}
-
-
-.project-image:hover {
-  transform: scale(1.05);            /* slight zoom */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* stronger shadow */
-}
-
-.project-card a img {
-  cursor: pointer;
+  .project-image {
+    max-width: 100%;
+  }
 }
